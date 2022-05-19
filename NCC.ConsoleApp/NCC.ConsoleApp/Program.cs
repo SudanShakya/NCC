@@ -18,7 +18,9 @@ namespace NCC.ConsoleApp
                 //ClassAndObjectExample();
                 //StringManipulation();
                 //PropertiesExample();
-                InheritenceExample();
+                //InheritenceExample();
+                //PolymorphismExample();
+                EnumsExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -252,6 +254,53 @@ namespace NCC.ConsoleApp
             Plants p2 = new Plants(30);
             Vertibrates v1 = new Vertibrates();
             l1.PublicVariable = 10;
+        }
+
+        private static void PolymorphismExample()
+        {
+            LivingThings l1 = new LivingThings();
+            LivingThings a1 = new Animal();
+            LivingThings p1 = new Plants();
+            LivingThings v1 = new Vertibrates();
+
+            l1.Eat();
+            a1.Eat();
+            p1.Eat();
+            v1.Eat();
+        }
+
+        private static void EnumsExample()
+        {
+            var day = Days.Monday;
+            var dayNum = (int)day;
+            day = (Days)5;
+
+            switch (day)
+            {
+                case Days.Sunday:
+                    break;
+
+                case Days.Monday:
+                    break;
+
+                case Days.Tuesday:
+                    break;
+
+                case Days.Wednesday:
+                    break;
+
+                case Days.Thursday:
+                    break;
+
+                case Days.Friday:
+                    break;
+
+                case Days.Saturday:
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
