@@ -15,7 +15,9 @@ namespace NCC.ConsoleApp
                 //ConditionalStatements();
                 //LoopingStatements();
                 //DaysLoop();
-                ClassAndObjectExample();
+                //ClassAndObjectExample();
+                StringManipulation();
+
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -200,6 +202,29 @@ namespace NCC.ConsoleApp
             var c2 = new ClassAndObject(0);
             c1.FName = "Aaron";
             Console.WriteLine(c1.FName);
+        }
+
+        private static void StringManipulation()
+        {
+            string a = "Hello";
+            string b = "NCC";
+            //string concatenation
+            var res = a + " " + b;
+
+            //string formatting
+            string templ = "{0} {1}";
+            var res1 = string.Format(templ, a, b);
+            Console.WriteLine("{0} {1}", a, b);
+
+            //string interpolation
+            var res3 = $"{a}! {b} {a}";
+
+            //stringbuilder
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit id totam consectetur hic velit minima veritatis doloremque magnam! Quia dolor quis eum, ut dicta perspiciatis sapiente illum laborum aliquid.");
+            sb.AppendLine("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit id totam consectetur hic velit minima veritatis doloremque magnam! Quia dolor quis eum, ut dicta perspiciatis sapiente illum laborum aliquid.");
+
+            var res4 = sb.ToString();
         }
     }
 }
