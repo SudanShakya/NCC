@@ -7,8 +7,18 @@ namespace NCC.ConsoleApp
     {
         private static void Main()
         {
-            Console.WriteLine("Hello World!");
-            DataTypes();
+            var res = "n";
+            do
+            {
+                //Console.WriteLine("Hello World!");
+                //DataTypes();
+                ConditionalStatements();
+
+                Console.WriteLine("Do you want to continue more (y/n)");
+                res = Console.ReadLine();
+            } while (res.ToUpper() == "Y");
+
+            return;
         }
 
         private static void DataTypes()
@@ -44,6 +54,75 @@ namespace NCC.ConsoleApp
             object o2 = 1;
 
             var str = i.ToString();
+        }
+        private static void ConditionalStatements()
+        {
+            //todo do this later
+            string days = "";
+            Console.WriteLine("Enter the day");
+            var choice = Convert.ToInt32(Console.ReadLine());
+            days = IfBlock(choice);
+
+            days = SwitchBlock(choice);
+        }
+
+        private static string SwitchBlock(int choice)
+        {
+            string days;
+            switch (choice)
+            {
+                case 1:
+                    days = "Sunday";
+                    break;
+
+                case 2:
+                    days = "Monday";
+                    break;
+
+                case 3://TODO Bibek will do this later
+                    days = "Tuesday";
+                    break;
+
+                case 4:
+                    days = "Wednesday";
+                    break;
+
+                case 5:
+                    days = "Thursday";
+                    break;
+
+                case 6:
+                    days = "Friday";
+                    break;
+
+                case 7:
+                    days = "Saturday";
+                    break;
+
+                default:
+                    days = "Not a valid day";
+                    break;
+            }
+
+            return days;
+        }
+
+        private static string IfBlock(int choice)
+        {
+            string days;
+            if (choice == 1) days = "Sunday";
+            else if (choice == 2) days = "Monday";
+            else if (choice == 3) days = "Tuesday";
+            else if (choice == 4) days = "Wednesday";
+            else if (choice == 5) days = "Thursday";
+            else if (choice == 6) days = "Friday";
+            else if (choice == 7) days = "Saturday";
+            else days = "Not a Valid day";
+
+            //ternary operator
+            //(condition) ? <True value> : <false value>
+            days = choice == 1 ? "Sunday" : choice == 2 ? "Monday" : choice == 3 ? "Tuesday" : choice == 4 ? "Wednesday" : choice == 5 ? "Thursday" : choice == 6 ? "Friday" : choice == 7 ? "Saturday" : "Not a valid day";
+            return days;
         }
     }
 }
