@@ -12,7 +12,8 @@ namespace NCC.ConsoleApp
             {
                 //Console.WriteLine("Hello World!");
                 //DataTypes();
-                ConditionalStatements();
+                //ConditionalStatements();
+                LoopingStatements();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -124,5 +125,48 @@ namespace NCC.ConsoleApp
             days = choice == 1 ? "Sunday" : choice == 2 ? "Monday" : choice == 3 ? "Tuesday" : choice == 4 ? "Wednesday" : choice == 5 ? "Thursday" : choice == 6 ? "Friday" : choice == 7 ? "Saturday" : "Not a valid day";
             return days;
         }
+
+        private static void LoopingStatements()
+        {
+            Console.WriteLine("Enter the number");
+            var num = Convert.ToInt32(Console.ReadLine());
+            //doing tasks repeatedly
+            //Initialization, Condition, Increament/Decrement
+            //unknown quantities
+            //known quantities
+            Console.WriteLine("Using while loop");
+            int i = 1;
+            while (i <= 10)
+            {
+                Console.WriteLine(num + " x " + i + " = " + num * i);
+                i++;
+            }
+            i = 1;
+            Console.WriteLine("Using Do While Loop");
+            do
+            {
+                Console.WriteLine(num + " x " + i + " = " + num * i);
+                i++;
+            } while (i <= 10);
+
+            Console.WriteLine("Using for loop");
+            for (i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(num + " x " + i + " = " + num * i);
+            }
+
+            //i = DaysLoop();
+            //infinite loop using for
+            //for (; ; )
+            //{
+            //}
+            //for (i=1;i<=10 ; )
+            //{
+            //}
+            //for (i=1;i>0;i++)
+            //{
+            //}
+        }
+
     }
 }
