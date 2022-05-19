@@ -22,7 +22,8 @@ namespace NCC.ConsoleApp
                 //PolymorphismExample();
                 //EnumsExample();
                 //ShapesExample();
-                ShapesExampleV2();
+                //ShapesExampleV2();
+                PartialExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -371,6 +372,13 @@ namespace NCC.ConsoleApp
                 default:
                     return null;
             }
+        }
+
+        private static void PartialExample()
+        {
+            ClassOne cOne = new ClassOne();
+            cOne.FunctionOne();
+            cOne.FunctionTwo();
         }
     }
 }
