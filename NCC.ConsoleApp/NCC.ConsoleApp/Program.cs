@@ -16,8 +16,8 @@ namespace NCC.ConsoleApp
                 //LoopingStatements();
                 //DaysLoop();
                 //ClassAndObjectExample();
-                StringManipulation();
-
+                //StringManipulation();
+                PropertiesExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -225,6 +225,20 @@ namespace NCC.ConsoleApp
             sb.AppendLine("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit id totam consectetur hic velit minima veritatis doloremque magnam! Quia dolor quis eum, ut dicta perspiciatis sapiente illum laborum aliquid.");
 
             var res4 = sb.ToString();
+        }
+
+        private static void PropertiesExample()
+        {
+            MarksInfo mi = new MarksInfo();
+            mi.MathMarks = 50.75;
+            mi.ScienceMarks = 70.85;
+            Console.WriteLine($"Total => {mi.Total}");
+            Console.WriteLine($"Percentage => {mi.Percentage}");
+            Console.WriteLine($"Division => {mi.Division}");
+            mi.ScienceMarks = 40;
+            Console.WriteLine($"Total => {mi.Total}");
+            Console.WriteLine($"Percentage => {mi.Percentage}");
+            Console.WriteLine($"Division => {mi.Division}");
         }
     }
 }
