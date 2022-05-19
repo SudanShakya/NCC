@@ -13,7 +13,9 @@ namespace NCC.ConsoleApp
                 //Console.WriteLine("Hello World!");
                 //DataTypes();
                 //ConditionalStatements();
-                LoopingStatements();
+                //LoopingStatements();
+                //DaysLoop();
+                ClassAndObjectExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -168,5 +170,36 @@ namespace NCC.ConsoleApp
             //}
         }
 
+        private static int DaysLoop()
+        {
+            int i;
+            string[] days = new string[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+            Console.WriteLine("\nUsing For loop");
+            for (i = 0; i < days.Length; i++)
+            {
+                if (i == 5)
+                {
+                    continue;
+                }
+                Console.WriteLine("Day => " + days[i]);
+            }
+
+            Console.WriteLine("\nUsing foreach");
+
+            foreach (var item in days)
+            {
+                Console.WriteLine("Day => " + item);
+            }
+
+            return i;
+        }
+
+        private static void ClassAndObjectExample()
+        {
+            ClassAndObject c1 = new ClassAndObject();
+            var c2 = new ClassAndObject(0);
+            c1.FName = "Aaron";
+            Console.WriteLine(c1.FName);
+        }
     }
 }
