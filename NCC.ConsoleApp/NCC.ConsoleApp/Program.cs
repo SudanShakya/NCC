@@ -20,7 +20,8 @@ namespace NCC.ConsoleApp
                 //PropertiesExample();
                 //InheritenceExample();
                 //PolymorphismExample();
-                EnumsExample();
+                //EnumsExample();
+                //ShapesExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -300,6 +301,43 @@ namespace NCC.ConsoleApp
 
                 default:
                     break;
+            }
+        }
+
+        private static void ShapesExample()
+        {
+            Console.WriteLine("Enter the choice\n1. for Square\n2 for Rectangle");
+            var choice = Convert.ToInt32(Console.ReadLine());
+
+            var shape = ShapeFactory(choice);
+            if (shape == null)
+            {
+                Console.WriteLine("Invalid choice");
+                return;
+            }
+            shape.GetInput();
+            shape.Area();
+            shape.Perimeter();
+        }
+
+        private static IShape ShapeFactory(int choice)
+        {
+            switch (choice)
+            {
+                case 1:
+                    return new Square();
+
+                case 2:
+                    return new Rectangle();
+
+                case 3:
+                    return new Circle();
+
+                case 4:
+                    return new EquilateralTriangle();
+
+                default:
+                    return null;
             }
         }
     }
