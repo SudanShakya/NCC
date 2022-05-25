@@ -6,6 +6,13 @@ namespace NCC.ConsoleApp
         
         public delegate void MathOps(int a, int b);
 
+        public event MathOps MathHandler;
+
+        public void Run(int a, int b)
+        {
+            MathHandler.Invoke(a, b);
+        }
+
         public void Run()
         {
             CallingAnonymousFunction();
@@ -38,17 +45,18 @@ namespace NCC.ConsoleApp
         {
             //multicast delegates
             MathOps math = Add;
-            math(10, 5);
             math += Subtract;
-            math(10, 5);
             math += Multiply;
-            math(10, 5);
             math += Divide;
+            math += Add;
             math(10, 5);
 
             math -= Add;
             math -= Multiply;
-            math(10, 10)
+            math(10, 10);
+
+            math -= Multiply;
+            math(10, 10);
         }
 
         public void Add(int a, int b)

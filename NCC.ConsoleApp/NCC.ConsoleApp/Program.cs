@@ -23,7 +23,8 @@ namespace NCC.ConsoleApp
                 //EnumsExample();
                 //ShapesExample();
                 //ShapesExampleV2();
-                PartialExample();
+                //PartialExample();
+                FunctionsExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -379,6 +380,23 @@ namespace NCC.ConsoleApp
             ClassOne cOne = new ClassOne();
             cOne.FunctionOne();
             cOne.FunctionTwo();
+        }
+
+        private static void FunctionsExample()
+        {
+            Functions f1 = new Functions();
+            f1.FunctionTwo(1,"");
+            f1.FunctionTwo(b: "", a: 1);
+            f1.FunctionThree(new int[] { 1, 2, 3,4,5 });
+            f1.FunctionFour(1,2,3,4,5,6,7,8,9,10);
+            int result = 0;
+            f1.FunctionSix(1,2,out result);
+            
+            //out le value variable ma nikalxa
+            f1.FunctionSeven(1,2,out result);
+            
+            //ref le value lai address ma lagera store garxa
+            f1.FunctionEight(2,4,ref result);
         }
     }
 }
