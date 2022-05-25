@@ -24,7 +24,8 @@ namespace NCC.ConsoleApp
                 //ShapesExample();
                 //ShapesExampleV2();
                 //PartialExample();
-                FunctionsExample();
+                //FunctionsExample();
+                DelegateExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -397,6 +398,26 @@ namespace NCC.ConsoleApp
             
             //ref le value lai address ma lagera store garxa
             f1.FunctionEight(2,4,ref result);
+        }
+
+        private static void DelegateExample()
+        {
+            Delegates ds = new Delegates();
+            ds.MathHandler += Ds_MathHandler;
+            ds.Run(2, 3);
+            Delegates ds1 = new Delegates();
+            ds1.MathHandler += Ds1_MathHandler;
+            ds1.Run(4, 5);
+        }
+
+        private static void Ds_MathHandler(int a, int b)
+        {
+            Console.WriteLine($"Function running from program.cs with parameters a={a} and b={b}");
+        }
+
+        private static void Ds1_MathHandler(int a, int b)
+        {
+            throw new NotImplementedException();
         }
     }
 }
