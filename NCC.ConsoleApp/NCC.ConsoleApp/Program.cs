@@ -25,7 +25,8 @@ namespace NCC.ConsoleApp
                 //ShapesExampleV2();
                 //PartialExample();
                 //FunctionsExample();
-                DelegateExample();
+                //DelegateExample();
+                CustomStackImplementation();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -418,6 +419,46 @@ namespace NCC.ConsoleApp
         private static void Ds1_MathHandler(int a, int b)
         {
             throw new NotImplementedException();
+        }
+
+        private static void CustomStackImplementation()
+        {
+            var cs = new CustomStack();
+            //CustomStackTemplated<LivingThings> cs1 = new CustomStackTemplated<LivingThings>();
+            //cs1.Push(new Animal());
+
+            cs.Push(10);
+            cs.Push(3);
+            cs.Pop();
+            cs.Push(4);
+            cs.Push(7);
+            cs.Push(6);
+            cs.Push(9);
+            cs.Push(10);
+
+            cs.Pop();
+            cs.Pop();
+            cs.Pop();
+            cs.Pop();
+            cs.Pop();
+            cs.Pop();
+            cs.Pop();
+            cs.Pop();
+
+            CustomStackObjects csObj = new CustomStackObjects();
+            csObj.Push(1);
+            csObj.Push("");
+            csObj.Push(new Circle());
+
+            LivingThings.TemplatedFunction<int, string, float>(1, "", 2f);
+            decimal d = 2.3m;
+            LivingThings.TemplatedFunction<string, IShape, float>("some string", new Circle(), (float)d);
+        }
+
+        private static void CollectionsV1()
+        {
+            object[] objects = new object[] { 1, "2", '3', 2.5f, 5.6d };
+            objects[-1] = 10;
         }
     }
 }

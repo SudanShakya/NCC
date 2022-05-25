@@ -24,6 +24,11 @@
         {
             Console.WriteLine("Living things can eat");
         }
+
+        public static void TemplatedFunction<T, U, V>(T a, U b, V c)
+        {
+            //do something here
+        }
     }
 
     public class Animal : LivingThings
@@ -76,15 +81,11 @@
 
         public override void Eat()
         {
-            base.Eat();
-            {
-                Console.WriteLine("Vertibrates can eat");
-            }
+            Console.WriteLine("Vertibrates can eat");
         }
-
+    }
         public sealed class Human : Vertibrates
         {
 
         }
-    }
 }
