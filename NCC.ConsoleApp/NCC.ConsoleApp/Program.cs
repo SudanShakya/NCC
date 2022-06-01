@@ -27,7 +27,8 @@ namespace NCC.ConsoleApp
                 //FunctionsExample();
                 //DelegateExample();
                 //CustomStackImplementation();
-                ExceptionHandlingExample();
+                //ExceptionHandlingExample();
+                ThreadsExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -480,6 +481,12 @@ namespace NCC.ConsoleApp
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private static void ThreadsExample()
+        {
+            ParallelProgramming pp = new ParallelProgramming();
+            pp.Run();
         }
     }
 }
