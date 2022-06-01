@@ -26,7 +26,8 @@ namespace NCC.ConsoleApp
                 //PartialExample();
                 //FunctionsExample();
                 //DelegateExample();
-                CustomStackImplementation();
+                //CustomStackImplementation();
+                ExceptionHandlingExample();
 
                 Console.WriteLine("Do you want to continue more (y/n)");
                 res = Console.ReadLine();
@@ -459,6 +460,26 @@ namespace NCC.ConsoleApp
         {
             object[] objects = new object[] { 1, "2", '3', 2.5f, 5.6d };
             objects[-1] = 10;
+        }
+
+        private static void ExceptionHandlingExample()
+        {
+            try
+            {
+                Test t1 = new Test();
+                t1.Add(2, 4);
+                Console.WriteLine("Enter a number");
+                var num = Convert.ToInt32(Console.ReadLine());
+                t1.Add(num, 5);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Argument Exception Occured");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
